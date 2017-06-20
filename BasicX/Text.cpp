@@ -18,7 +18,7 @@ void Text::Init(void)
 	
 	m_nShader = 0;
 
-	m_pSystem = BasicXSystem::GetInstance();
+	m_pSystem = SystemSingleton::GetInstance();
 	m_pMatMngr = MaterialManager::GetInstance();
 	m_pShaderMngr = ShaderManager::GetInstance();
 	m_nShader = m_pShaderMngr->GetShaderID("Text");//Compile Text shader

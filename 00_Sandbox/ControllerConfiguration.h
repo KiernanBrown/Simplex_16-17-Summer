@@ -5,41 +5,38 @@ Date: 2017/05
 #ifndef __CONTROLLERCONFIG_H_
 #define __CONTROLLERCONFIG_H_
 
-#include "Simplex\Simplex.h"
-
 #include "SFML\Window.hpp"
 #include "SFML\Graphics.hpp"
 #include "SFML\OpenGL.hpp"
 
-using namespace Simplex;
 enum ControllerKey_
 {
-	SimplexKey_A,		//0
-	SimplexKey_B,		//1
-	SimplexKey_X,		//2
-	SimplexKey_Y,		//3
-	SimplexKey_L1,		//4
-	SimplexKey_R1,		//5
-	SimplexKey_L2,		//6
-	SimplexKey_R2,		//7
-	SimplexKey_L3,		//8
-	SimplexKey_R3,		//9
-	SimplexKey_Select,	//10
-	SimplexKey_Start,	//11
-	SimplexKey_Pad,		//12
-	SimplexKey_G0,		//13
-	SimplexKey_G1,		//14
+	SimplexKey_A = 0,
+	SimplexKey_B = 1,
+	SimplexKey_X = 2,
+	SimplexKey_Y = 3,
+	SimplexKey_L1 = 4,
+	SimplexKey_R1 = 5,
+	SimplexKey_L2 = 6,
+	SimplexKey_R2 = 7,
+	SimplexKey_L3 = 8,
+	SimplexKey_R3 = 9,
+	SimplexKey_Select = 10,
+	SimplexKey_Start = 11,
+	SimplexKey_Pad = 12,
+	SimplexKey_G0 = 13,
+	SimplexKey_G1 = 14,
 };
 enum ControllerAxis_
 {
-	SimplexAxis_X,		//0
-	SimplexAxis_Y,		//1
-	SimplexAxis_U,		//2
-	SimplexAxis_V,		//3
-	SimplexAxis_L,		//4
-	SimplexAxis_R,		//5
-	SimplexAxis_POVX,	//6
-	SimplexAxis_POVY,	//7
+	SimplexAxis_X = 0,
+	SimplexAxis_Y = 1,
+	SimplexAxis_U = 2,
+	SimplexAxis_V = 3,
+	SimplexAxis_L = 4,
+	SimplexAxis_R = 5,
+	SimplexAxis_POVX = 6,
+	SimplexAxis_POVY = 7,
 };
 enum ControllerModel_
 {
@@ -83,14 +80,14 @@ enum Vendor_
 };
 struct ControllerInput
 {
-	uint uModel = 1000;
+	unsigned int uModel = 1000;
 
 	bool button[15];
 	int mapButton[15];
 	int mapAxis[8];
 	float axis[8];
 	
-	ControllerInput(uint nVendorID = 0, uint nProductID = 0);
+	ControllerInput(unsigned int nVendorID = 0, unsigned int nProductID = 0);
 
 private:
 	ControllerInput(ControllerInput const& other);

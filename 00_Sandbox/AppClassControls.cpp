@@ -13,47 +13,45 @@ void Application::ProcessMouseMovement(sf::Event a_event)
 }
 void Application::ProcessMousePressed(sf::Event a_event)
 {
-	if (a_event.mouseButton.button == sf::Mouse::Button::Left)
+	switch (a_event.mouseButton.button)
 	{
+	default: break;
+	case sf::Mouse::Button::Left:
 		gui.m_bMousePressed[0] = true;
-	}
-	if (a_event.mouseButton.button == sf::Mouse::Button::Middle)
-	{
+		break;
+	case sf::Mouse::Button::Middle:
 		gui.m_bMousePressed[1] = true;
 		m_bArcBall = true;
-	}
-	if (a_event.mouseButton.button == sf::Mouse::Button::Right)
-	{
+		break;
+	case sf::Mouse::Button::Right:
 		gui.m_bMousePressed[2] = true;
 		m_bFPC = true;
+		break;
 	}
 
 	for (int i = 0; i < 3; i++)
-	{
 		gui.io.MouseDown[i] = gui.m_bMousePressed[i];
-	}
 }
 void Application::ProcessMouseReleased(sf::Event a_event)
 {
-	if (a_event.mouseButton.button == sf::Mouse::Button::Left)
+	switch (a_event.mouseButton.button)
 	{
+	default: break;
+	case sf::Mouse::Button::Left:
 		gui.m_bMousePressed[0] = false;
-	}
-	if (a_event.mouseButton.button == sf::Mouse::Button::Middle)
-	{
+		break;
+	case sf::Mouse::Button::Middle:
 		gui.m_bMousePressed[1] = false;
 		m_bArcBall = false;
-	}
-	if(a_event.mouseButton.button == sf::Mouse::Button::Right)
-	{
+		break;
+	case sf::Mouse::Button::Right:
 		gui.m_bMousePressed[2] = false;
 		m_bFPC = false;
+		break;
 	}
 
 	for (int i = 0; i < 3; i++)
-	{
 		gui.io.MouseDown[i] = gui.m_bMousePressed[i];
-	}
 }
 void Application::ProcessMouseScroll(sf::Event a_event)
 {
@@ -69,9 +67,14 @@ void Application::ProcessMouseScroll(sf::Event a_event)
 //Keyboard
 void Application::ProcessKeyPressed(sf::Event a_event)
 {
-	if (a_event.key.code == sf::Keyboard::Space)
+	switch (a_event.key.code)
+	{
+	default: break;
+	case sf::Keyboard::Space:
 		m_sound.play();
-
+		break;
+	}
+	
 	//gui
 	gui.io.KeysDown[a_event.key.code] = true;
 	gui.io.KeyCtrl = a_event.key.control;
@@ -81,22 +84,29 @@ void Application::ProcessKeyReleased(sf::Event a_event)
 {
 	static bool bFPSControl = false;
 
-	if (a_event.key.code == sf::Keyboard::F1)
-		m_pCameraMngr->SetCameraMode(CAM_PERSP);
-	if (a_event.key.code == sf::Keyboard::F2)
-		m_pCameraMngr->SetCameraMode(CAM_ORTHO_Z);
-	if (a_event.key.code == sf::Keyboard::F3)
-		m_pCameraMngr->SetCameraMode(CAM_ORTHO_Y);
-	if (a_event.key.code == sf::Keyboard::F4)
-		m_pCameraMngr->SetCameraMode(CAM_ORTHO_X);
-	if (a_event.key.code == sf::Keyboard::F)
+	switch (a_event.key.code)
 	{
+	default: break;
+	case sf::Keyboard::Escape:
+		m_bRunning = false;
+		break;
+	case sf::Keyboard::F1:
+		m_pCameraMngr->SetCameraMode(CAM_PERSP);
+		break;
+	case sf::Keyboard::F2:
+		m_pCameraMngr->SetCameraMode(CAM_ORTHO_Z);
+		break;
+	case sf::Keyboard::F3:
+		m_pCameraMngr->SetCameraMode(CAM_ORTHO_Y);
+		break;
+	case sf::Keyboard::F4:
+		m_pCameraMngr->SetCameraMode(CAM_ORTHO_X);
+		break;
+	case sf::Keyboard::F:
 		bFPSControl = !bFPSControl;
 		m_pCameraMngr->SetFPS(bFPSControl);
-	}
-
-	if (a_event.key.code == sf::Keyboard::Add)
-	{
+		break;
+	case sf::Keyboard::Add:
 		++m_uActCont;
 		m_uActCont %= 8;
 		if (m_uControllerCount > 0)
@@ -107,10 +117,8 @@ void Application::ProcessKeyReleased(sf::Event a_event)
 				m_uActCont %= 8;
 			}
 		}
-	}
-
-	if (a_event.key.code == sf::Keyboard::Subtract)
-	{
+		break;
+	case sf::Keyboard::Subtract:
 		--m_uActCont;
 		if (m_uActCont > 7)
 			m_uActCont = 7;
@@ -123,10 +131,8 @@ void Application::ProcessKeyReleased(sf::Event a_event)
 					m_uActCont = 7;
 			}
 		}
+		break;
 	}
-
-	if (a_event.key.code == sf::Keyboard::Escape)
-		m_bRunning = false;
 
 	//gui
 	gui.io.KeysDown[a_event.key.code] = false;
@@ -156,10 +162,15 @@ void Application::ProcessJoystickConnected(uint nController)
 }
 void Application::ProcessJoystickPressed(sf::Event a_event)
 {
+	//Check the ID of the controller
 	int nID = a_event.joystickButton.joystickId;
 
+	//Identify the button pressed
 	int nButton = a_event.joystickButton.button;
+	//map the value to our control value
 	m_pController[nID]->button[m_pController[nID]->mapButton[nButton]] = true;
+
+	//Process...
 
 	//If we press L3 + R3 on the active controller we quit the application
 	if (m_pController[m_uActCont]->button[SimplexKey_L3] && m_pController[m_uActCont]->button[SimplexKey_R3])
@@ -167,10 +178,15 @@ void Application::ProcessJoystickPressed(sf::Event a_event)
 }
 void Application::ProcessJoystickReleased(sf::Event a_event)
 {
+	//Check the ID of the controller
 	int nID = a_event.joystickButton.joystickId;
 
+	//Identify the button pressed
 	int nButton = a_event.joystickButton.button;
+	//map the value to our control value
 	m_pController[nID]->button[m_pController[nID]->mapButton[nButton]] = false;
+
+	//Process...
 
 	//if we released the Pad key on the active controller quit the application
 	if (m_pController[m_uActCont]->mapButton[nButton] == SimplexKey_Pad)

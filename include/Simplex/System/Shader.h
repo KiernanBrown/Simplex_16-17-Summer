@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __SHADERCLASS_H_
 #define __SHADERCLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\system\ShaderCompiler.h"
 
 namespace Simplex

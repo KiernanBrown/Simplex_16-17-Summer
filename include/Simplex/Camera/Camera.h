@@ -5,7 +5,7 @@ Date: 2015/10
 #ifndef __CAMERACLASS_H_
 #define __CAMERACLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 
 namespace Simplex
 {

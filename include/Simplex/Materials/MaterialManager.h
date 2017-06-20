@@ -6,7 +6,7 @@ Modified: 2016/05
 #ifndef __MATERIALMANAGERSINGLETON_H_
 #define __MATERIALMANAGERSINGLETON_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\materials\Material.h"
 #include <map>
 

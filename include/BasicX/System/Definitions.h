@@ -87,6 +87,8 @@ USAGE: will safely delete the input pointer and initialize it to nullptr, DOES N
 #define C_BLUE_CORNFLOWER vector3(0.4f, 0.6f, 0.9f)
 #define C_CYAN vector3(0.0f,1.0f,1.0f)
 
+#define C_INDIGO vector3(0.30f, 0.0f, 0.52)
+
 #define C_YELLOW vector3(1.0f, 1.0f, 0.0f)
 #define C_ORANGE vector3(1.0f,0.5f,0.0f)
 #define C_VIOLET vector3(0.54f,0.16f,0.88f)

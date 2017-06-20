@@ -125,7 +125,7 @@ matrix4 Camera::GetVP(void)
 //--- Non Standard Singleton Methods
 void Camera::CalculateProjection(void)
 {
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 	float fRatio = static_cast<float>(pSystem->GetWindowWidth()) / static_cast<float>(pSystem->GetWindowHeight());
 	float fPos = 0;
 	switch (m_nMode)
@@ -173,7 +173,7 @@ void Camera::MoveForward(float a_fDistance)
 }
 vector3 Camera::GetClickOnWorldSpace(uint a_nMouseX, uint a_nMouseY)
 {
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 	float posX = static_cast<float>(a_nMouseX - pSystem->GetWindowX());
 	float posY = static_cast<float>(a_nMouseY - pSystem->GetWindowY());
 	float width = static_cast<float>(pSystem->GetWindowWidth());
@@ -190,7 +190,7 @@ vector3 Camera::GetClickOnWorldSpace(uint a_nMouseX, uint a_nMouseY)
 }
 std::pair<vector3, vector3> Camera::GetClickAndDirectionOnWorldSpace(uint a_nMouseX, uint a_nMouseY)
 {
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 	
 	float posX = static_cast<float>(a_nMouseX - pSystem->GetWindowX());
 	float posY = static_cast<float>(a_nMouseY - pSystem->GetWindowY());
@@ -328,7 +328,7 @@ matrix4 Camera::GetCameraSpaceAdjusted(void)
 }
 matrix4 Camera::GetSpaceUnderMouse(void)
 {
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 	UINT	MouseX, MouseY;		// Coordinates for the mouse
 
 	POINT pt;
@@ -374,7 +374,7 @@ matrix4 Camera::GetSpaceUnderMouse(void)
 }
 matrix4 Camera::GetCameraPlane(void)
 {
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 	float fSize = pSystem->GetWindowWidth() / static_cast<float>(pSystem->GetWindowHeight());
 	return GetCameraSpaceAdjusted() * glm::scale(vector3(fSize, 1.0f, 0.0f));
 }

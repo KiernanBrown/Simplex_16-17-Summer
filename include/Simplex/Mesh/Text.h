@@ -5,7 +5,7 @@ Date: 2017/05
 #ifndef __TEXTSYSTEM_H_
 #define __TEXTSYSTEM_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\System\ShaderManager.h"
 #include "Simplex\Materials\MaterialManager.h"
 

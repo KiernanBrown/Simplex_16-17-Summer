@@ -9,9 +9,12 @@ void ShaderManager::Init(void)
 
 	//Compile Color shader
 	Folder* pFolder = Folder::GetInstance();
-	
+
 	//Compile Text shader
-	CompileShader(pFolder->GetFolderShaders() + "TextShader.vs", pFolder->GetFolderShaders() + "TextShader.fs", "Text");
+	CompileShader(pFolder->GetFolderShaders() + "Text.vs", pFolder->GetFolderShaders() + "Text.fs", "Text");
+
+	//Compile Basic shader
+	CompileShader(pFolder->GetFolderShaders() + "Basic.vs", pFolder->GetFolderShaders() + "Basic.fs", "Basic");
 
 	//Compile Skybox shader
 	CompileShader(pFolder->GetFolderShaders() + "Skybox.vs", pFolder->GetFolderShaders() + "Skybox.fs", "Skybox");
@@ -19,11 +22,10 @@ void ShaderManager::Init(void)
 	//Compile Wireframe shader
 	CompileShader(pFolder->GetFolderShaders() + "Simplex.vs", pFolder->GetFolderShaders() + "Wireframe.fs", "Wireframe");
 
-	//Compile BasicColor shader
-	CompileShader(pFolder->GetFolderShaders() + "Simplex.vs", pFolder->GetFolderShaders() + "BasicColor.fs", "BasicColor");
-
-	//Compile BasicX shader
+	//Compile Simplex shader
 	CompileShader(pFolder->GetFolderShaders() + "Simplex.vs", pFolder->GetFolderShaders() + "Simplex.fs", "Simplex");
+
+	printf("\n");
 }
 void ShaderManager::Release(void)
 {

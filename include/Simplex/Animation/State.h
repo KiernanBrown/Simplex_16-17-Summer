@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __STATECLASS_H_
 #define __STATECLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include <vector>
 
 namespace Simplex

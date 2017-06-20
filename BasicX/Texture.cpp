@@ -13,7 +13,7 @@ void Texture::Release(void)
 void Texture::Init(void)
 {
 	m_nTextureID = 0;
-	m_pSystem = BasicXSystem::GetInstance();
+	m_pSystem = SystemSingleton::GetInstance();
 	m_sAbsoluteRoute = "";
 }
 bool Texture::LoadTexture(String a_sFileName)

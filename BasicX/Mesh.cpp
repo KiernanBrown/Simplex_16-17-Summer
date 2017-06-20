@@ -598,27 +598,27 @@ void Mesh::GenerateCuboid(vector3 a_v3Dimensions, vector3 a_v3Color)
 void Mesh::GenerateCone(float a_fRadius, float a_fHeight, int a_nSubdivisions, vector3 a_v3Color)
 {
 	//Code removed for assignment purposes
-	GenerateCube(a_fRadius, a_v3Color);
+	GenerateCube(a_fRadius * 2.0f, a_v3Color);
 }
 void Mesh::GenerateCylinder(float a_fRadius, float a_fHeight, int a_nSubdivisions, vector3 a_v3Color)
 {
 	//Code removed for assignment purposes
-	GenerateCube(a_fRadius, a_v3Color);
+	GenerateCube(a_fRadius * 2.0f, a_v3Color);
 }
 void Mesh::GenerateTube(float a_fOuterRadius, float a_fInnerRadius, float a_fHeight, int a_nSubdivisions, vector3 a_v3Color)
 {
 	//Code removed for assignment purposes
-	GenerateCube(a_fOuterRadius, a_v3Color);
+	GenerateCube(a_fOuterRadius * 2.0f, a_v3Color);
 }
 void Mesh::GenerateTorus(float a_fOuterRadius, float a_fInnerRadius, int a_nSubdivisionsA, int a_nSubdivisionsB, vector3 a_v3Color)
 {
 	//Code removed for assignment purposes
-	GenerateCube(a_fOuterRadius, a_v3Color);
+	GenerateCube(a_fOuterRadius * 2.0f, a_v3Color);
 }
-void Mesh::GenerateSphere(float a_fDiameter, int a_nSubdivisions, vector3 a_v3Color)
+void Mesh::GenerateSphere(float a_fRadius, int a_nSubdivisions, vector3 a_v3Color)
 {
 	//Code removed for assignment purposes
-	GenerateCube(a_fDiameter, a_v3Color);
+	GenerateCube(a_fRadius * 2.0f, a_v3Color);
 }
 void Mesh::GenerateSkybox(void)
 {

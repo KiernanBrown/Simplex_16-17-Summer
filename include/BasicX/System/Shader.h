@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __SHADERCLASS_H_
 #define __SHADERCLASS_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 #include "BasicX\System\ShaderCompiler.h"
 
 namespace BasicX

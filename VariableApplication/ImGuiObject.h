@@ -4,7 +4,9 @@ Date: 2017/05
 ----------------------------------------------*/
 #ifndef __IMGUIOBJECT_H_
 #define __IMGUIOBJECT_H_
-#define USINGSIMPLEX
+
+// #define USINGSIMPLEX
+
 #ifdef USINGSIMPLEX
 //"Using namespace" to use all the classes in the dll
 #include "Simplex\SimplexApplication.h"
@@ -15,7 +17,6 @@ using namespace BasicX; //Using ReEng namespace to use all the classes in the dl
 #endif
 
 #include "imgui\imgui.h"
-
 
 struct ImGuiObject
 {

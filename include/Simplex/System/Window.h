@@ -11,7 +11,7 @@ Date: 2014/05
 #include <windows.h>
 #include "Resource.h"
 #include "Simplex\system\Definitions.h" //Simplex basic Definitions
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 
 namespace Simplex
 {

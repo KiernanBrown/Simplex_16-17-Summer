@@ -1,5 +1,5 @@
 #include "BasicX\System\GLSystem.h"
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 
 #include <iostream>
 using namespace BasicX;
@@ -176,7 +176,7 @@ HRESULT GLSystem::InitGLDevice(HWND g_hWnd)
 		SetFocus(g_hWnd);									// Sets Keyboard Focus To The Window
 		
 		//This uses the System's information to generate the projection
-		BasicXSystem* pSystem = BasicXSystem::GetInstance();
+		SystemSingleton* pSystem = SystemSingleton::GetInstance();
 		int nWidth = pSystem->GetWindowWidth();
 		int nHeight = pSystem->GetWindowHeight();
 
@@ -246,7 +246,7 @@ bool GLSystem::UpdateRenderTarget(GLuint& a_nFrameBuffer, GLuint& a_nDepthBuffer
 	if (a_nFrameBuffer == 0 || a_nDepthBuffer == 0 || a_nTextureIndex == 0)
 		return false;
 
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 	uint width = pSystem->GetWindowWidth();
 	uint height = pSystem->GetWindowHeight();
 
@@ -287,7 +287,7 @@ bool GLSystem::UpdateRenderTarget(GLuint& a_nFrameBuffer, GLuint& a_nDepthBuffer
 }
 bool GLSystem::GenerateRenderTarget(GLuint& a_nFrameBuffer, GLuint& a_nDepthBuffer, GLuint& a_nTextureIndex)
 {
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 
 	glGenFramebuffers(1, &a_nFrameBuffer);	
 	glGenTextures(1, &a_nTextureIndex);

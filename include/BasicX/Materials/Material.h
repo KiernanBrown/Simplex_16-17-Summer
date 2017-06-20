@@ -6,7 +6,7 @@ Modified: 2016/05
 #ifndef __MATERIALCLASS_H_
 #define __MATERIALCLASS_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 #include "BasicX\materials\TextureManager.h"
 
 namespace BasicX
@@ -16,7 +16,7 @@ class BasicXDLL Material
 {
 	String m_sName = "NULL";
 
-	BasicXSystem* m_pSystem = nullptr;
+	SystemSingleton* m_pSystem = nullptr;
 	TextureManager* m_pTextureMngr = nullptr;
 
 	GLuint m_nMapDiffuse = 0;

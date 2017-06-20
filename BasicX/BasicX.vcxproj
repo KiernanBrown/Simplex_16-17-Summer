@@ -31,33 +31,8 @@
     <ClInclude Include="..\include\BasicX\System\Shader.h" />
     <ClInclude Include="..\include\BasicX\System\ShaderCompiler.h" />
     <ClInclude Include="..\include\BasicX\System\ShaderManager.h" />
-    <ClInclude Include="..\include\BasicX\System\BasicXSystem.h" />
+    <ClInclude Include="..\include\BasicX\System\SystemSingleton.h" />
     <ClInclude Include="..\include\BasicX\System\Window.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\include\Simplex\Shaders\Basic.fs" />
-    <None Include="..\include\Simplex\Shaders\Basic.vs" />
-    <None Include="..\include\Simplex\Shaders\BasicColor.fs" />
-    <None Include="..\include\Simplex\Shaders\BasicColor.vs" />
-    <None Include="..\include\Simplex\Shaders\Color.fs" />
-    <None Include="..\include\Simplex\Shaders\Color.vs" />
-    <None Include="..\include\Simplex\Shaders\Wireframe.fs" />
-    <None Include="..\include\Simplex\Shaders\Simplex.vs" />
-    <None Include="..\include\Simplex\Shaders\PassThrough.fs" />
-    <None Include="..\include\Simplex\Shaders\PassThrough.vs" />
-    <None Include="..\include\Simplex\Shaders\Phong.fs" />
-    <None Include="..\include\Simplex\Shaders\Phong.vs" />
-    <None Include="..\include\Simplex\Shaders\REShader.fs" />
-    <None Include="..\include\Simplex\Shaders\REShader.vs" />
-    <None Include="..\include\Simplex\Shaders\REShaderInv.fs" />
-    <None Include="..\include\Simplex\Shaders\REShaderMC.fs" />
-    <None Include="..\include\Simplex\Shaders\Skybox.fs" />
-    <None Include="..\include\Simplex\Shaders\Skybox.vs" />
-    <None Include="..\include\Simplex\Shaders\Test.fs" />
-    <None Include="..\include\Simplex\Shaders\Test.vs" />
-    <None Include="..\include\Simplex\Shaders\TextShader.fs" />
-    <None Include="..\include\Simplex\Shaders\TextShader.vs" />
-    <None Include="..\_Binary\Shaders\Simplex.fs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicXApplication.cpp" />
@@ -75,11 +50,22 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderCompiler.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
-    <ClCompile Include="BasicXSystem.cpp" />
+    <ClCompile Include="SystemSingleton.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\include\Simplex\Shaders\Basic.fs" />
+    <None Include="..\include\Simplex\Shaders\Basic.vs" />
+    <None Include="..\include\Simplex\Shaders\Simplex.fs" />
+    <None Include="..\include\Simplex\Shaders\Simplex.vs" />
+    <None Include="..\include\Simplex\Shaders\Skybox.fs" />
+    <None Include="..\include\Simplex\Shaders\Skybox.vs" />
+    <None Include="..\include\Simplex\Shaders\Text.fs" />
+    <None Include="..\include\Simplex\Shaders\Text.vs" />
+    <None Include="..\include\Simplex\Shaders\Wireframe.fs" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E745E25C-0143-42AC-A486-1395A4C972AE}</ProjectGuid>

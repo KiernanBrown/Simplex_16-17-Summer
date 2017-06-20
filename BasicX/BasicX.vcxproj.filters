@@ -111,85 +111,11 @@
     <ClInclude Include="..\include\BasicX\System\Window.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\BasicX\System\BasicXSystem.h">
+    <ClInclude Include="..\include\BasicX\System\SystemSingleton.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\include\Simplex\Shaders\Basic.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Basic.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\BasicColor.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\BasicColor.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Color.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Color.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\PassThrough.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\PassThrough.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Phong.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Phong.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\REShader.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\REShader.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\REShaderInv.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\REShaderMC.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Skybox.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Skybox.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Test.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Test.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\TextShader.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\TextShader.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Wireframe.fs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\include\Simplex\Shaders\Simplex.vs">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\_Binary\Shaders\Simplex.fs">
-      <Filter>Shaders</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BasicXApplication.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files\Camera</Filter>
     </ClCompile>
@@ -244,8 +170,40 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="BasicXSystem.cpp">
+    <ClCompile Include="SystemSingleton.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="BasicXApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\include\Simplex\Shaders\Basic.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Basic.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Simplex.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Simplex.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Skybox.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Skybox.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Text.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Text.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\include\Simplex\Shaders\Wireframe.fs">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

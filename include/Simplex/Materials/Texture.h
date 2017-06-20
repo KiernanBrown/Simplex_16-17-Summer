@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __TEXTURECLASS_H_
 #define __TEXTURECLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\system\FileReader.h"
 #include "FreeImage\FreeImage.h"
 

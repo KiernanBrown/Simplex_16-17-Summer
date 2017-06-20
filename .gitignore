@@ -38,3 +38,4 @@ Z_DELETE
 *.opendb
 *.db
 .vs/
+_Binary/*_d.ini

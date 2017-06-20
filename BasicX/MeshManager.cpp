@@ -10,7 +10,7 @@ void MeshManager::Init(void)
 	m_pLightMngr = LightManager::GetInstance();
 	m_pCameraMngr = CameraManager::GetInstance();
 	m_pText = Text::GetInstance();
-	
+
 	GenerateSkybox();
 	GenerateCube(1.0f);
 	GenerateCone(1.0f, 1.0f, 12);
@@ -21,7 +21,7 @@ void MeshManager::Init(void)
 	GenerateTorus(1.0f, 0.6f, 12, 12);
 }
 void MeshManager::Release(void)
-{	
+{
 	m_pShaderMngr = nullptr;
 	m_pMatMngr = nullptr;
 	m_pLightMngr = nullptr;
@@ -47,24 +47,10 @@ void MeshManager::Release(void)
 	}
 	m_renderOptionsList.clear();
 	m_meshNames.clear();
-
-	/*
-	for (auto it = m_MeshMap.begin(); it != m_MeshMap.end(); ++it)
-	{
-		Mesh* pTemp = it->second;
-		if (pTemp != nullptr)
-		{
-			delete pTemp;
-			pTemp = nullptr;
-		}
-	}
-	m_MeshMap.clear();
-	m_mRender.clear();
-	*/
 }
 MeshManager* MeshManager::GetInstance()
 {
-	if(m_pInstance == nullptr)
+	if (m_pInstance == nullptr)
 	{
 		m_pInstance = new MeshManager();
 	}
@@ -72,17 +58,17 @@ MeshManager* MeshManager::GetInstance()
 }
 void MeshManager::ReleaseInstance()
 {
-	if(m_pInstance != nullptr)
+	if (m_pInstance != nullptr)
 	{
 		delete m_pInstance;
 		m_pInstance = nullptr;
 	}
 }
 //The big 3
-MeshManager::MeshManager(){Init();}
-MeshManager::MeshManager(MeshManager const& other){ }
+MeshManager::MeshManager() { Init(); }
+MeshManager::MeshManager(MeshManager const& other) { }
 MeshManager& MeshManager::operator=(MeshManager const& other) { return *this; }
-MeshManager::~MeshManager(){Release();};
+MeshManager::~MeshManager() { Release(); };
 //---Text
 void MeshManager::Print(String a_sInput, vector3 a_v3Color)
 {
@@ -106,23 +92,6 @@ void MeshManager::Printf(vector3 a_v3Color, const char * _Format, ...)
 void MeshManager::SetFont(String a_sTextureName)
 {
 	m_pText->SetFont(a_sTextureName);
-}
-void MeshManager::SetRenderTarget(GLuint a_nFrameBuffer, GLuint a_nDepthBuffer, GLuint a_nTextureToRender)
-{
-	//Set the frame buffer active
-	glBindFramebuffer(GL_FRAMEBUFFER, a_nFrameBuffer);
-
-	//Texture to render to
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, a_nTextureToRender);
-
-	glBindRenderbuffer(GL_RENDERBUFFER, a_nDepthBuffer);
-
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
-	glViewport(static_cast<GLint>(0),
-		static_cast<GLint>(0),
-		static_cast<GLint>(pSystem->GetWindowWidth()),
-		static_cast<GLint>(pSystem->GetWindowHeight()));
 }
 //--- Non Standard Singleton Methods
 int MeshManager::GeneratePlane(float a_fSize, vector3 a_v3Color)
@@ -191,17 +160,17 @@ std::vector<String> MeshManager::GetMeshNames(void)
 {
 	//for each element in map
 	std::vector<String> lNames;
-	
+
 	for (auto it = m_meshList.begin(); it != m_meshList.end(); ++it)
 	{
 		lNames.push_back((*it)->GetName());
 	}
-	
+
 	return lNames;
 }
 int MeshManager::InstantiateMesh(uint a_uMeshIndex, String a_sNameNewInstance)
 {
-	if(a_uMeshIndex < m_meshList.size())
+	if (a_uMeshIndex < m_meshList.size())
 	{
 		Mesh* pCopy = new Mesh();
 		pCopy->Instantiate(m_meshList[a_uMeshIndex]);
@@ -252,7 +221,7 @@ void MeshManager::AddCubeToRenderList(matrix4 a_m4ToWorld, vector3 a_v3Color, in
 		//If the object does not exist create it
 		if (nMeshIndex < 0)
 		{
-			int nIndex = GeneratePlane(1.0f, a_v3Color);
+			int nIndex = GenerateCube(1.0f, a_v3Color);
 			if (nIndex < 0) //if I could not make the mesh return
 				return;
 		}
@@ -276,7 +245,7 @@ void MeshManager::AddConeToRenderList(matrix4 a_m4ToWorld, vector3 a_v3Color, in
 		//If the object does not exist create it
 		if (nMeshIndex < 0)
 		{
-			int nIndex = GeneratePlane(1.0f, a_v3Color);
+			int nIndex = GenerateCone(1.0f, 1.0f, 12, a_v3Color);
 			if (nIndex < 0) //if I could not make the mesh return
 				return;
 		}
@@ -300,7 +269,7 @@ void MeshManager::AddCylinderToRenderList(matrix4 a_m4ToWorld, vector3 a_v3Color
 		//If the object does not exist create it
 		if (nMeshIndex < 0)
 		{
-			int nIndex = GeneratePlane(1.0f, a_v3Color);
+			int nIndex = GenerateCylinder(1.0f, 1.0f, 12, a_v3Color);
 			if (nIndex < 0) //if I could not make the mesh return
 				return;
 		}
@@ -324,7 +293,7 @@ void MeshManager::AddTubeToRenderList(matrix4 a_m4ToWorld, vector3 a_v3Color, in
 		//If the object does not exist create it
 		if (nMeshIndex < 0)
 		{
-			int nIndex = GeneratePlane(1.0f, a_v3Color);
+			int nIndex = GenerateTube(1.0f, 0.6f, 1.0f, 12, a_v3Color);
 			if (nIndex < 0) //if I could not make the mesh return
 				return;
 		}
@@ -348,7 +317,7 @@ void MeshManager::AddTorusToRenderList(matrix4 a_m4ToWorld, vector3 a_v3Color, i
 		//If the object does not exist create it
 		if (nMeshIndex < 0)
 		{
-			int nIndex = GeneratePlane(1.0f, a_v3Color);
+			int nIndex = GenerateTorus(1.0f, 0.6f, 12, 12, a_v3Color);
 			if (nIndex < 0) //if I could not make the mesh return
 				return;
 		}
@@ -372,7 +341,7 @@ void MeshManager::AddSphereToRenderList(matrix4 a_m4ToWorld, vector3 a_v3Color, 
 		//If the object does not exist create it
 		if (nMeshIndex < 0)
 		{
-			int nIndex = GeneratePlane(1.0f, a_v3Color);
+			int nIndex = GenerateSphere(1.0f, 6, a_v3Color);
 			if (nIndex < 0) //if I could not make the mesh return
 				return;
 		}
@@ -433,11 +402,11 @@ int MeshManager::AddMesh(Mesh* a_pMesh)
 		return -1;
 
 	//if the mesh is already in the list return the index
-	
+
 	int nMesh = GetMeshIndex(a_pMesh);
 	if (nMesh > 0)
 		return nMesh;
-	
+
 	String sName = a_pMesh->GetName();
 	while (GetMeshIndex(sName) >= 0)
 	{
@@ -448,7 +417,7 @@ int MeshManager::AddMesh(Mesh* a_pMesh)
 	std::vector<MeshOptions>* meshOptions = new std::vector<MeshOptions>();
 	m_renderOptionsList.push_back(meshOptions);
 	m_meshNames[a_pMesh->GetName()] = m_meshList.size() - 1;
-	return m_meshList.size() -1;
+	return m_meshList.size() - 1;
 }
 Mesh* MeshManager::GetMesh(String a_sName)
 {
@@ -463,6 +432,32 @@ Mesh *MeshManager::GetMesh(uint nMesh)
 }
 uint MeshManager::GetMeshCount(void) { return m_meshList.size(); }
 
+void MeshManager::SetRenderTarget(GLuint a_uFrameBuffer, GLuint a_uDepthBuffer, GLuint a_uTextureToRender, int a_nWidth, int a_nHeight)
+{
+	//Set the frame buffer active
+	glBindFramebuffer(GL_FRAMEBUFFER, a_uFrameBuffer);
+
+	//Texture to render to
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, a_uTextureToRender);
+
+	glBindRenderbuffer(GL_RENDERBUFFER, a_uDepthBuffer);
+
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
+
+	int nWidth = a_nWidth;
+	if (nWidth < 0)
+		nWidth = pSystem->GetWindowWidth();
+
+	int nHeight = a_nHeight;
+	if (nHeight < 0)
+		nHeight = pSystem->GetWindowHeight();
+
+	glViewport(static_cast<GLint>(0),
+		static_cast<GLint>(0),
+		static_cast<GLint>(nWidth),
+		static_cast<GLint>(nHeight));
+}
 int MeshManager::GetMeshIndex(String a_sName)
 {
 	//look for the mesh by name in map
@@ -494,7 +489,7 @@ void MeshManager::AddMeshToRenderList(uint a_nIndex, matrix4 a_m4Transform, int 
 		return;
 
 	//we create a new options object and store the information provided
-	MeshOptions options(a_m4Transform,a_Render);
+	MeshOptions options(a_m4Transform, a_Render);
 
 	//Get the list of options for this mesh
 	//std::vector<MeshOptions>* optionsList = m_MeshOptionsList[a_nIndex];
@@ -506,11 +501,11 @@ void MeshManager::AddMeshToRenderList(uint a_nIndex, matrix4 a_m4Transform, int 
 	//if we found the mesh in the map
 	if (var != m_mRender.end())
 	{
-		lOptions = var->second; //we get the existing options for that mesh
+	lOptions = var->second; //we get the existing options for that mesh
 	}
 	else //this entry on the map was not allocated yet
 	{
-		lOptions = new std::vector<MeshOptions>(); //so we allocate new space for it
+	lOptions = new std::vector<MeshOptions>(); //so we allocate new space for it
 	}
 	//we add the new options to the list (if it was empty this will be the first entry)
 	lOptions->push_back(options);
@@ -531,7 +526,7 @@ void MeshManager::AddMeshToRenderList(Mesh* a_pMesh, matrix4 a_m4Transform, int 
 	if (!a_pMesh)
 		return;
 	AddMeshToRenderList(a_pMesh->GetName(), a_m4Transform, a_Render);
-	
+
 	/*
 	//we create a new options object and store the information provided
 	MeshOptions options;
@@ -545,11 +540,11 @@ void MeshManager::AddMeshToRenderList(Mesh* a_pMesh, matrix4 a_m4Transform, int 
 	//if we found the mesh in the map
 	if (var != m_mRender.end())
 	{
-		lOptions = var->second; //we get the existing options for that mesh
+	lOptions = var->second; //we get the existing options for that mesh
 	}
 	else //this entry on the map was not allocated yet
 	{
-		lOptions = new std::vector<MeshOptions>(); //so we allocate new space for it
+	lOptions = new std::vector<MeshOptions>(); //so we allocate new space for it
 	}
 	//we add the new options to the list (if it was empty this will be the first entry)
 	lOptions->push_back(options);
@@ -594,7 +589,7 @@ uint MeshManager::Render(void)
 			if (nSolids > 0)
 			{
 				float* fSolidArray = new float[16 * nSolids];//reserve memory
-				//memcpy the translated values to the array (way faster than copy element by element)
+															 //memcpy the translated values to the array (way faster than copy element by element)
 				for (int nSolid = 0; nSolid < nSolids; ++nSolid)
 				{
 					const float* m4MVP = glm::value_ptr(solidList[nSolid]);
@@ -616,7 +611,7 @@ uint MeshManager::Render(void)
 			if (nWires > 0)
 			{
 				float* fWireArray = new float[16 * nWires];//reserve memory
-															 //memcpy the translated values to the array (way faster than copy element by element)
+														   //memcpy the translated values to the array (way faster than copy element by element)
 				for (int nWire = 0; nWire < nWires; ++nWire)
 				{
 					const float* m4MVP = glm::value_ptr(wireList[nWire]);

@@ -5,7 +5,7 @@ Date: 2015/10
 #ifndef __CAMERACLASS_H_
 #define __CAMERACLASS_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 
 namespace BasicX
 {

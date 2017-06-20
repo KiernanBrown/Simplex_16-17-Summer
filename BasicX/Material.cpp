@@ -46,7 +46,7 @@ void Material::Release(void)
 }
 void Material::Init(void)
 {
-	m_pSystem = BasicXSystem::GetInstance();
+	m_pSystem = SystemSingleton::GetInstance();
 	m_pTextureMngr = TextureManager::GetInstance();
 	m_nMapDiffuse = -1;
 	m_nMapNormal = -1;

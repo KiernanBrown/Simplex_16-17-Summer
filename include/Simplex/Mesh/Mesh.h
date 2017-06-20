@@ -5,7 +5,7 @@ Date: 2017/05
 #ifndef __MESHSIMPLEX_H_
 #define __MESHSIMPLEX_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\System\ShaderManager.h"
 #include "Simplex\Materials\MaterialManager.h"
 #include "Simplex\light\LightManager.h"
@@ -576,12 +576,12 @@ public:
 	/*
 	USAGE: Generates a Sphere mesh
 	ARGUMENTS:
-		float a_fDiameter -> diameter of the sphere (radius times 2)
-		int a_nSubdivisions -> Number of divisions, not a lot of difference in shapes larger than 3 subd
-		a_v3Color -> Color of the mesh
+	float a_fRadius -> radius of the sphere
+	int a_nSubdivisions -> Number of divisions, not a lot of difference in shapes larger than 3 subd
+	a_v3Color -> Color of the mesh
 	OUTPUT: ---
 	*/
-	void GenerateSphere(float a_fDiameter, int a_nSubdivisions, vector3 a_v3Color = C_WHITE);
+	void GenerateSphere(float a_fRadius, int a_nSubdivisions, vector3 a_v3Color = C_WHITE);
 	/*
 	USAGE: Generates a skybox using the skybox.png file from data folder
 	ARGUMENTS: ---

@@ -39,7 +39,7 @@ namespace BasicX
 		LPWSTR m_lpCmdLine; // Command line arguments
 
 							//Standard variables
-		BasicXSystem* m_pSystem = nullptr;// Singleton of the system
+		SystemSingleton* m_pSystem = nullptr;// Singleton of the system
 
 		Window* m_pWindow = nullptr;// Window class
 		GLSystem* m_pGLSystem = nullptr;// Singleton of the OpenGL rendering context
@@ -238,7 +238,7 @@ namespace BasicX
 		virtual void Init(HINSTANCE hInstance, LPWSTR lpCmdLine, int nCmdShow, bool a_bUsingConsole) final
 		{
 			// Get the system singleton
-			m_pSystem = BasicXSystem::GetInstance();
+			m_pSystem = SystemSingleton::GetInstance();
 
 			SetMaxFramerate(60.0f);
 
@@ -280,10 +280,7 @@ namespace BasicX
 
 			// Get the instance of the class
 			m_pGLSystem = GLSystem::GetInstance();
-
-			// Set OPENGL 3.x Context
-			m_pSystem->m_RenderingContext = OPT_OPENGL3X;
-
+			
 			// Create context
 			m_pGLSystem->InitGLDevice(m_pWindow->GetHandler());
 
@@ -314,16 +311,12 @@ namespace BasicX
 			InitVariables();
 
 			//Color of the window
-			if (m_pSystem->m_RenderingContext == OPT_OPENGL3X)
-				glClearColor(m_v4ClearColor.r, m_v4ClearColor.g, m_v4ClearColor.b, m_v4ClearColor.a);
+			glClearColor(m_v4ClearColor.r, m_v4ClearColor.g, m_v4ClearColor.b, m_v4ClearColor.a);
 
 			//Generate a new render target and set back the render target to be the window
 			m_pGLSystem->GenerateRenderTarget(m_nFrameBuffer, m_nDepthBuffer, m_nDawingTexture);
 			m_pMeshMngr->SetRenderTarget();
-
-			//Start the clock
-			m_pSystem->StartClock();
-
+			
 			m_selection = std::pair<int, int>(-1, -1);
 
 			printf("\n");
@@ -493,7 +486,7 @@ namespace BasicX
 					int nValue;
 					sscanf_s(reader.m_sLine.c_str(), "Fullscreen: %d", &nValue);
 					if (nValue > 0)
-						m_pSystem->SetWindowFullscreen(BTO_RESOLUTIONS::RES_C_1280x720_16x9_HD);
+						m_pSystem->SetWindowFullscreen(true);
 				}
 				else if (sWord == "Borderless:")
 				{

@@ -8,7 +8,7 @@ Date: 2017/04
 #pragma warning( disable : 4251 )
 
 #include "BasicX\System\Definitions.h" //ReEng basic Definitions
-#include "BasicX\System\BasicXSystem.h" //System related methods
+#include "BasicX\System\SystemSingleton.h" //System related methods
 
 #include "BasicX\System\Window.h" //WinAPI encapsulated methods
 #include "BasicX\System\FileReader.h" //Reads an object and returns lines as strings
@@ -29,9 +29,6 @@ Date: 2017/04
 
 #include "BasicX\Camera\CameraManager.h" //Creates and manages the camera object for the world
 
-
-
-
 /*
  ReleaseAllSingletons
 USAGE: Releases all ReEngine Singletons
@@ -49,7 +46,7 @@ namespace BasicX
 		Folder::ReleaseInstance();
 		GLSystem::ReleaseInstance();
 		ShaderManager::ReleaseInstance();
-		BasicXSystem::ReleaseInstance();
+		SystemSingleton::ReleaseInstance();
 		Text::ReleaseInstance();
 		MeshManager::ReleaseInstance();
 	}

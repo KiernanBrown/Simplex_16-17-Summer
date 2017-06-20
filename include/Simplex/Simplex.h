@@ -8,7 +8,7 @@ Date: 2017/04
 #pragma warning( disable : 4251 )
 
 #include "Simplex\system\Definitions.h" //ReEng basic Definitions
-#include "Simplex\System\SimplexSystem.h" //System related methods
+#include "Simplex\System\SystemSingleton.h" //System related methods
 
 #include "Simplex\system\Window.h" //WinAPI encapsulated methods
 #include "Simplex\system\FileReader.h" //Reads an object and returns lines as strings
@@ -34,14 +34,6 @@ Date: 2017/04
 #include "Simplex\Mesh\Group.h"//Group class
 #include "Simplex\Mesh\Model.h"//Model Class
 
-#include "Simplex\Mesh\MeshDrawerSingleton.h" //Singleton for drawing Meshes
-#include "Simplex\Mesh\TextSingleton.h" //Singleton for drawing Text on the screen
-#include "Simplex\Mesh\MeshManagerSingleton.h" //Singleton for drawing Meshes
-#include "Simplex\Mesh\PrimitiveManagerSingleton.h" //Creates and manages the Primitive objects
-#include "Simplex\Mesh\ModelManagerSingleton.h" //Manages models and instances
-
-#include "Simplex\Physics\OctantClass.h"//Manages the octants
-
 #include "Simplex\Camera\CameraManager.h" //Creates and manages the camera object for the world
 
 /*
@@ -57,17 +49,12 @@ namespace Simplex
 		LightManager::ReleaseInstance();
 		MaterialManager::ReleaseInstance();
 		TextureManager::ReleaseInstance();
-		ModelManagerSingleton::ReleaseInstance();
 		CameraManager::ReleaseInstance();
 		Folder::ReleaseInstance();
 		GLSystem::ReleaseInstance();
 		ShaderManager::ReleaseInstance();
 		SystemSingleton::ReleaseInstance();
-		PrimitiveManagerSingleton::ReleaseInstance();
-		MeshManagerSingleton::ReleaseInstance();
 		Text::ReleaseInstance();
-		TextSingleton::ReleaseInstance();
-		MeshDrawerSingleton::ReleaseInstance();
 		MeshManager::ReleaseInstance();
 	}
 }

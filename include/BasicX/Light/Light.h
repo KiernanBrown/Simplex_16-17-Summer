@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __LIGHTCLASS_H_
 #define __LIGHTCLASS_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 
 namespace BasicX
 {

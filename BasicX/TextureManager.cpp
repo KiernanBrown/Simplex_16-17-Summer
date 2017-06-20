@@ -42,7 +42,7 @@ int TextureManager::IdentifyTexure(String a_sName)
 	bool bHasRoute = (sAbsoluteRoute != a_sName);
 	if (!bHasRoute)
 	{
-		BasicXSystem* pSystem = BasicXSystem::GetInstance();
+		SystemSingleton* pSystem = SystemSingleton::GetInstance();
 		String sName = pSystem->m_pFolder->GetFolderRoot();
 		sName += pSystem->m_pFolder->GetFolderData();
 		sName += pSystem->m_pFolder->GetFolderTextures();
@@ -90,7 +90,7 @@ void TextureManager::SaveTexture(String a_sTextureName)
 	//http://stackoverflow.com/questions/5844858/how-to-take-screenshot-in-opengl
 
 	// Make the BYTE array, factor of 3 because it's RBG.
-	BasicXSystem* pSystem = BasicXSystem::GetInstance();
+	SystemSingleton* pSystem = SystemSingleton::GetInstance();
 	GLubyte* pixels = new GLubyte[4 * pSystem->GetWindowWidth() * pSystem->GetWindowHeight()];
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	glReadPixels(0, 0, pSystem->GetWindowWidth(), pSystem->GetWindowHeight(), GL_BGRA, GL_UNSIGNED_BYTE, pixels);

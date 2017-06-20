@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __ANIMATIONCLASS_H_
 #define __ANIMATIONCLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\Animation\Frame.h"
 
 namespace Simplex

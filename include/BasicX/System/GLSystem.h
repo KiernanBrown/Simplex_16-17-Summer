@@ -3,8 +3,8 @@ Adapted from http://www.swiftless.com/tutorials/opengl4/1-opengl-window.html
 into a class Date: 2015/06
 ----------------------------------------------*/
 
-#ifndef __GLBasicXSystem_H_
-#define __GLBasicXSystem_H_
+#ifndef __GLSystemSingleton_H_
+#define __GLSystemSingleton_H_
 
 #include "BasicX\System\Window.h"
 
@@ -200,4 +200,4 @@ private:
 
 #include "ShaderCompiler.h"
 
-#endif /*__GLBasicXSystem_H__*/
+#endif /*__GLSystemSingleton_H__*/

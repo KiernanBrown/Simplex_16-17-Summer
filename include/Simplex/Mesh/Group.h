@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __SimplexGroup_H_
 #define __SimplexGroup_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\Mesh\MeshManager.h"
 #include "Simplex\Animation\Frame.h"
 #include "Simplex\Animation\Animation.h"

@@ -6,7 +6,7 @@ Modified: 2016/05
 #ifndef __MATERIALMANAGERSINGLETON_H_
 #define __MATERIALMANAGERSINGLETON_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 #include "BasicX\materials\Material.h"
 #include <map>
 
@@ -21,7 +21,7 @@ class BasicXDLL MaterialManager
 		and provide the right accessors for it, but its call so often that it creates overhead the other way
 	*/
 	std::map<String,int> m_map; //Map of the materials
-	BasicXSystem* m_pSystem; //System class Pointer
+	SystemSingleton* m_pSystem; //System class Pointer
 	static MaterialManager* m_pInstance; // Singleton Pointer
 
 public:

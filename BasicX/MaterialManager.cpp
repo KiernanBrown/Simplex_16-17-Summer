@@ -40,7 +40,7 @@ void  MaterialManager::Release(void)
 }
 void MaterialManager::Init(void)
 {
-	m_pSystem = BasicXSystem::GetInstance();
+	m_pSystem = SystemSingleton::GetInstance();
 }
 int MaterialManager::AddMaterial(Material input)
 {

@@ -326,9 +326,7 @@ namespace Simplex
 			m_pGLSystem->GenerateRenderTarget(m_nFrameBuffer, m_nDepthBuffer, m_nDawingTexture);
 			m_pMeshMngr->SetRenderTarget();
 
-			//Start the clock
-			m_pSystem->StartClock();
-
+			//Init selection
 			m_selection = std::pair<int, int>(-1, -1);
 
 			printf("\n");

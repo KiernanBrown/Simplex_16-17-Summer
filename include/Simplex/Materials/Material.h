@@ -6,7 +6,7 @@ Modified: 2016/05
 #ifndef __MATERIALCLASS_H_
 #define __MATERIALCLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 #include "Simplex\materials\TextureManager.h"
 
 namespace Simplex

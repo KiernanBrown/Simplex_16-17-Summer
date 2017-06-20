@@ -5,7 +5,7 @@ Date: 2017/06
 #ifndef __FILEREADERCLASS_H_
 #define __FILEREADERCLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 
 namespace Simplex
 {

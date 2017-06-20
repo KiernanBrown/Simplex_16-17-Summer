@@ -1,5 +1,5 @@
 #include "BasicX\System\Window.h"
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 using namespace BasicX;
 Window::Window()
 {
@@ -27,7 +27,7 @@ void Window::Init(void)
 
 	m_bWindowCrated = false;
 
-	m_pSystem = BasicXSystem::GetInstance();
+	m_pSystem = SystemSingleton::GetInstance();
 }
 
 Window::Window(const Window& other) { }

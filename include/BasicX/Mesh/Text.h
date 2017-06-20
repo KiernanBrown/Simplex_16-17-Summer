@@ -5,7 +5,7 @@ Date: 2017/05
 #ifndef __TEXTSYSTEM_H_
 #define __TEXTSYSTEM_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 #include "BasicX\System\ShaderManager.h"
 #include "BasicX\Materials\MaterialManager.h"
 
@@ -37,7 +37,7 @@ namespace BasicX
 		vector3 m_v3Head = ZERO_V3;
 
 		static Text* m_pInstance; // Singleton pointer
-		BasicXSystem* m_pSystem = nullptr;
+		SystemSingleton* m_pSystem = nullptr;
 
 		String m_sText = "";
 		String m_sTextPrev = "";

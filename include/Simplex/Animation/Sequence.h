@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __SEQUENCECLASS_H_
 #define __SEQUENCECLASS_H_
 
-#include "Simplex\System\SimplexSystem.h"
+#include "Simplex\System\SystemSingleton.h"
 
 namespace Simplex
 {

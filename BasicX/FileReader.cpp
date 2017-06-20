@@ -29,7 +29,7 @@ void FileReader::Release(void) { }
 void FileReader::Init(void)
 {
 	m_pFile = nullptr;
-	m_pSystem = BasicXSystem::GetInstance();
+	m_pSystem = SystemSingleton::GetInstance();
 	m_sFirstWord = "";
 }
 

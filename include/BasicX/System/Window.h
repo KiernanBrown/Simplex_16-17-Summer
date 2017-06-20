@@ -11,7 +11,7 @@ Date: 2014/05
 #include <windows.h>
 #include "Resource.h"
 #include "BasicX\System\Definitions.h" //BasicX basic Definitions
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 
 namespace BasicX
 {
@@ -30,7 +30,7 @@ class BasicXDLL Window
 	HINSTANCE m_hInstance; //Window Instance
 	WNDPROC m_Callback; //Associated Callback for this window
 
-	BasicXSystem* m_pSystem; //System singleton for ReEngine
+	SystemSingleton* m_pSystem; //System singleton for ReEngine
 	
 public:
 	/*

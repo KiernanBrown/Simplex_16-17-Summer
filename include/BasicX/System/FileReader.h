@@ -5,14 +5,14 @@ Date: 2017/06
 #ifndef __FILEREADERCLASS_H_
 #define __FILEREADERCLASS_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 
 namespace BasicX
 {
 
 class BasicXDLL FileReader
 {
-	BasicXSystem* m_pSystem = nullptr; //System pointer
+	SystemSingleton* m_pSystem = nullptr; //System pointer
 	FILE* m_pFile; //File pointer
 	std::ifstream m_iStream;
 	std::ofstream m_oStream;

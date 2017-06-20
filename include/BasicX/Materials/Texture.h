@@ -5,7 +5,7 @@ Date: 2015/06
 #ifndef __TEXTURECLASS_H_
 #define __TEXTURECLASS_H_
 
-#include "BasicX\System\BasicXSystem.h"
+#include "BasicX\System\SystemSingleton.h"
 #include "BasicX\System\FileReader.h"
 #include "FreeImage\FreeImage.h"
 
@@ -15,7 +15,7 @@ namespace BasicX
 class BasicXDLL Texture
 {
 	GLuint m_nTextureID = 0;
-	BasicXSystem* m_pSystem = nullptr;
+	SystemSingleton* m_pSystem = nullptr;
 	String m_sName = "NULL";
 	String m_sFileName = "NULL";
 	String m_sAbsoluteRoute = "";
