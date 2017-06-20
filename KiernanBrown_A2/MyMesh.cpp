@@ -511,10 +511,60 @@ void MyMesh::GenerateTorus(float a_fOuterRadius, float a_fInnerRadius, int a_nSu
 
 	Release();
 	Init();
+	
+	// Get the difference between the outer and inner radius
+	float difference = a_fOuterRadius - a_fInnerRadius;
 
-	// Replace this with your code
-	GenerateCube(a_fOuterRadius * 2.0f, a_v3Color);
-	// -------------------------------
+	// Loop to generate the torus
+	for (int i = 0; i < a_nSubdivisionsB; i++)
+	{
+		// Get the distance from the center of the torus for this ring and the next ring
+		float distance1 = a_fOuterRadius + (-difference / 2.0f * cos(2 * glm::pi<float>() * ((float)i / a_nSubdivisionsB)));
+		float distance2 = a_fOuterRadius + (-difference / 2.0f * cos(2 * glm::pi<float>() * (float)(i + 1) / a_nSubdivisionsB));
+
+		// Get the height of this ring and the next ring
+		float height1 = difference / 2.0f * sin(2 * glm::pi<float>() * (float)i / a_nSubdivisionsB);
+		float height2 = difference / 2.0f * sin(2 * glm::pi<float>() * (float)(i + 1) / a_nSubdivisionsB);
+		
+
+		// Create this ring and the next ring of the torus
+		vector3* ring1 = new vector3[a_nSubdivisionsA];
+		vector3* ring2 = new vector3[a_nSubdivisionsA];
+		for (int j = 0; j < a_nSubdivisionsA; j++)
+		{
+			// Get the angle for this point
+			float angle = 2 * glm::pi<float>() * (float)j / a_nSubdivisionsA;
+
+			ring1[j] = vector3(distance1 * cos(angle), height1, distance1 * sin(angle));
+		}
+		for (int j = 0; j < a_nSubdivisionsA; j++)
+		{
+			// Get the angle for this point
+			float angle = 2 * glm::pi<float>() * (float)(j + 1) / a_nSubdivisionsA;
+
+			ring2[j] = vector3(distance2 * cos(angle), height2, distance2 * sin(angle));
+		}
+
+		// Create the quads between these two rings
+		for (int j = 0; j < a_nSubdivisionsA; j++)
+		{
+			// We have a special case where we take the last vertices of the ring and go to the front of the ring for the last index
+			if (j == a_nSubdivisionsA - 1)
+			{
+				AddQuad(ring2[0], ring2[j], ring1[0], ring1[j]);
+			}
+
+			// Otherwise, we make a quad using these four points
+			else
+			{
+				AddQuad(ring2[j + 1], ring2[j], ring1[j + 1], ring1[j]);
+			}
+		}
+
+		// Delete the ring1 and ring2 arrays because they are no longer being used
+		delete[] ring1;
+		delete[] ring2;
+	}
 
 	// Adding information about color
 	CompleteMesh(a_v3Color);
@@ -531,46 +581,67 @@ void MyMesh::GenerateSphere(float a_fRadius, int a_nSubdivisions, vector3 a_v3Co
 		GenerateCube(a_fRadius * 2.0f, a_v3Color);
 		return;
 	}
-	if (a_nSubdivisions > 6)
-		a_nSubdivisions = 6;
+	if (a_nSubdivisions > 20)
+		a_nSubdivisions = 20;
 
 	Release();
 	Init();
 
-	// Replace this with your code
 	// Create the top and bottom center points
-	float fHeight = a_fRadius / 2.0f;
+	float fHeight = a_fRadius;
 	vector3 centerTop(0, fHeight, 0);
 	vector3 centerBottom(0, -fHeight, 0);
 
-	// Create a cylinder as the middle of the circle
-
-	// Create the points for the bottom and top of the cylinder
-	vector3* bottomPoints = new vector3[a_nSubdivisions];
-	vector3* topPoints = new vector3[a_nSubdivisions];
+	// Loop to generate the sphere
 	for (int i = 0; i < a_nSubdivisions; i++)
 	{
-		// Find the angle that we are using to make the point
-		float angle = 2 * glm::pi<float>() * (float)i / a_nSubdivisions;
+		// Find the angle that we are using to make these points
+		float angle1 = 2 * glm::pi<float>() * (float)i / a_nSubdivisions;
+		float angle2 = 2 * glm::pi<float>() * (float)(i + 1) / a_nSubdivisions;
 
-		// Create the two points with the x values being the radius times the cos of the angle, and the z values being the radius times the sin of the angle
-		bottomPoints[i] = vector3(a_fRadius * cos(angle), centerBottom.y, a_fRadius * sin(angle));
-		topPoints[i] = vector3(a_fRadius * cos(angle), centerTop.y, a_fRadius * sin(angle));
-	}
+		// Make two vectors to hold the points for this section and the next section of the sphere
+		vector3* points1 = new vector3[a_nSubdivisions];
+		vector3* points2 = new vector3[a_nSubdivisions];
 
-	// Create the quads for the side of the cylinder
-	for (int i = 0; i < a_nSubdivisions; i++)
-	{
-		if (i != a_nSubdivisions - 1)
+		// Loop to create the points for this and the next section of the sphere
+		for (int j = 0; j < a_nSubdivisions; j++)
 		{
-			AddQuad(bottomPoints[i + 1], bottomPoints[i], topPoints[i + 1], topPoints[i]);
+			// sin(glm::pi<float>() * j / (float)a_nSubdivisions) is used in the x and z value calculation to make the x and z values go from 0 * radius to 1 * radius and back to 0 * radius
+			// cos(glm::pi<float>() * (j / (float)a_nSubdivisions)) is used to make the y value go from height to negative height
+			points1[j] = vector3(sin(glm::pi<float>() * j / (float)a_nSubdivisions) * a_fRadius * cos(angle1), cos(glm::pi<float>() * (j / (float)a_nSubdivisions)) * fHeight, sin(glm::pi<float>() * j / (float)a_nSubdivisions) * a_fRadius * sin(angle1));
 		}
-		else
+		for (int j = 0; j < a_nSubdivisions; j++)
 		{
-			AddQuad(bottomPoints[0], bottomPoints[i], topPoints[0], topPoints[i]);
+			// We do the same thing as we did for the last section, but using angle2 instead
+			points2[j] = vector3(sin(glm::pi<float>() * j / (float)a_nSubdivisions) *a_fRadius * cos(angle2), cos(glm::pi<float>() * (j / (float)a_nSubdivisions)) * fHeight, sin(glm::pi<float>() * j / (float)a_nSubdivisions) * a_fRadius * sin(angle2));
 		}
-	}
 
+		// Create quads and triangles
+		for (int j = 0; j < a_nSubdivisions; j++)
+		{
+			// If we are at the last index, we will make a tri connecting to the bottom of the sphere
+			if (j == a_nSubdivisions - 1)
+			{
+				AddTri(points1[j], points2[j], centerBottom);
+			}
+
+			// Otherwise, we will create a quad using these four points
+			else
+			{
+				AddQuad(points1[j + 1], points1[j], points2[j + 1], points2[j]);
+			}
+
+			// If we are at the first index, we will also create a tri connecting to the top of the sphere
+			if (j == 0)
+			{
+				AddTri(points2[j], points1[j], centerTop);
+			}
+		}
+
+		// Delete the points1 and points2 arrays as they are no longer being used
+		delete[] points1;
+		delete[] points2;
+	}
 
 	// Adding information about color
 	CompleteMesh(a_v3Color);
