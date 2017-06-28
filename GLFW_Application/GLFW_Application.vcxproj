@@ -14,7 +14,7 @@
     <ProjectGuid>{837A57D3-2A9F-4985-B2EA-E18558EEAA43}</ProjectGuid>
     <RootNamespace>GLFW_Application</RootNamespace>
     <ProjectName>GLFW_Application</ProjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

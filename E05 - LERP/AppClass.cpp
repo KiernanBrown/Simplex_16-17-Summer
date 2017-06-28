@@ -8,9 +8,9 @@ void Application::InitVariables(void)
 	m_pWindow->setPosition(sf::Vector2i(710, 0)); 
 
 	//Set the position and target of the camera
-	m_pCameraMngr->SetPositionTargetAndView(vector3(5.0f,3.0f,15.0f), ZERO_V3, AXIS_Y);
+	m_pCameraMngr->SetPositionTargetAndUp(vector3(5.0f,3.0f,15.0f), ZERO_V3, AXIS_Y);
 
-	m_pModel = new Model();
+	m_pModel = new Simplex::Model();
 	m_pModel->Load("Sorted\\WallEye.bto");
 	
 	m_stopsList.push_back(vector3(-4.0f, -2.0f, 5.0f));

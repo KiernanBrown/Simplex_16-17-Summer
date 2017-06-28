@@ -14,7 +14,7 @@
     <ProjectGuid>{C76AC833-06E7-4E6A-A097-83568F4930BE}</ProjectGuid>
     <RootNamespace>12_MeshClass</RootNamespace>
     <ProjectName>12_MeshClass</ProjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -117,6 +117,7 @@ xcopy "$(SolutionDir)include\Simplex\Shaders" "$(SolutionDir)_Binary\Shaders" /y
     <ClInclude Include="..\res\resource.h" />
     <ClInclude Include="AppClass.h" />
     <ClInclude Include="ControllerConfiguration.h" />
+    <ClInclude Include="Definitions.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MyMesh.h" />
   </ItemGroup>

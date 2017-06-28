@@ -1,4 +1,5 @@
 #include "AppClass.h"
+using namespace Simplex;
 void Application::InitVariables(void)
 {
 	//Music
@@ -15,7 +16,7 @@ void Application::InitVariables(void)
 	m_sound.setBuffer(m_soundBuffer);
 
 	//load model
-	m_pModel = new Model();
+	m_pModel = new Simplex::Model();
 	m_pModel->Load("Lego\\Unikitty.BTO");
 }
 void Application::Update(void)

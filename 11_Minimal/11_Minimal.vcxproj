@@ -14,7 +14,7 @@
     <ProjectGuid>{CEBD13BA-58AB-4983-8281-2FD4A23876F5}</ProjectGuid>
     <RootNamespace>11_Minimal</RootNamespace>
     <ProjectName>11_Minimal</ProjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -116,6 +116,7 @@ xcopy "$(SolutionDir)include\Simplex\Shaders" "$(SolutionDir)_Binary\Shaders" /y
     <ClInclude Include="..\res\resource.h" />
     <ClInclude Include="AppClass.h" />
     <ClInclude Include="ControllerConfiguration.h" />
+    <ClInclude Include="Definitions.h" />
     <ClInclude Include="Main.h" />
   </ItemGroup>
   <ItemGroup>

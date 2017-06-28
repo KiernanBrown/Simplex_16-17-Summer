@@ -2,8 +2,8 @@
 Programmer: Alberto Bobadilla (labigm@gmail.com)
 Date: 2017/04
 ----------------------------------------------*/
-#ifndef __SIMPLEXENGINE_H_
-#define __SIMPLEXENGINE_H_
+#ifndef __SIMPLEXFRAMEWORK_H_
+#define __SIMPLEXFRAMEWORK_H_
 
 #pragma warning( disable : 4251 )
 
@@ -13,7 +13,7 @@ Date: 2017/04
 #include "Simplex\system\Window.h" //WinAPI encapsulated methods
 #include "Simplex\system\FileReader.h" //Reads an object and returns lines as strings
 #include "Simplex\system\Folder.h" //Sets the working directory
-#include "Simplex\system\GLSystem.h" //OpenGL 2.0 and 3.0 initialization
+#include "Simplex\system\GLSystem.h" //OpenGL 3.X initialization
 
 #include "Simplex\system\ShaderManager.h" //Shader Manager, loads and manages different shader files
 #include "Simplex\system\ShaderCompiler.h" //Compiles the shader objects
@@ -44,18 +44,27 @@ OUTPUT: ---
 */
 namespace Simplex
 {
-	static void ReleaseAllSingletons(void)
-	{
-		LightManager::ReleaseInstance();
-		MaterialManager::ReleaseInstance();
-		TextureManager::ReleaseInstance();
-		CameraManager::ReleaseInstance();
-		Folder::ReleaseInstance();
-		GLSystem::ReleaseInstance();
-		ShaderManager::ReleaseInstance();
-		SystemSingleton::ReleaseInstance();
-		Text::ReleaseInstance();
-		MeshManager::ReleaseInstance();
-	}
-}
-#endif //__RENDERINGENGINE_H__
+
+static void ReleaseAllSingletons(void)
+{
+	LightManager::ReleaseInstance();
+	MaterialManager::ReleaseInstance();
+	TextureManager::ReleaseInstance();
+	CameraManager::ReleaseInstance();
+	Folder::ReleaseInstance();
+	GLSystem::ReleaseInstance();
+	ShaderManager::ReleaseInstance();
+	SystemSingleton::ReleaseInstance();
+	Text::ReleaseInstance();
+	MeshManager::ReleaseInstance();
+};
+
+} //namespace Simplex
+
+#endif //__SIMPLEXFRAMEWORK_H_
+
+  /*
+  USAGE:
+  ARGUMENTS: ---
+  OUTPUT: ---
+  */

@@ -14,7 +14,7 @@
     <ProjectGuid>{EF9B5E00-F5D5-4EA6-9B4C-8C8149983517}</ProjectGuid>
     <RootNamespace>Winapi</RootNamespace>
     <ProjectName>Winapi</ProjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
