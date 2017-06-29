@@ -96,6 +96,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KiernanBrown_E05", "Kiernan
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KiernanBrown_A3", "KiernanBrown_A3\KiernanBrown_A3.vcxproj", "{EADA6F74-8DB2-412C-9E37-71FBDAF2F148}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KiernanBrown_Ex01", "KiernanBrown_Ex01\KiernanBrown_Ex01.vcxproj", "{FDB8B81A-1C37-40DE-B7F9-806646CF3DB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -200,6 +202,10 @@ Global
 		{EADA6F74-8DB2-412C-9E37-71FBDAF2F148}.Debug|x86.Build.0 = Debug|Win32
 		{EADA6F74-8DB2-412C-9E37-71FBDAF2F148}.Release|x86.ActiveCfg = Release|Win32
 		{EADA6F74-8DB2-412C-9E37-71FBDAF2F148}.Release|x86.Build.0 = Release|Win32
+		{FDB8B81A-1C37-40DE-B7F9-806646CF3DB0}.Debug|x86.ActiveCfg = Debug|Win32
+		{FDB8B81A-1C37-40DE-B7F9-806646CF3DB0}.Debug|x86.Build.0 = Debug|Win32
+		{FDB8B81A-1C37-40DE-B7F9-806646CF3DB0}.Release|x86.ActiveCfg = Release|Win32
+		{FDB8B81A-1C37-40DE-B7F9-806646CF3DB0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
