@@ -20,7 +20,7 @@ class Application
 	Model* m_pCreeper = nullptr; //model to display
 	Model* m_pSteve = nullptr; //model to display
 
-	quaternion m_qCreeper; //quaterion for the creeper
+	quaternion m_qCreeper; //quaternion for the creeper
 
 	MyRigidBody* m_pCreeperRB = nullptr; //Rigid Body of the model
 	MyRigidBody* m_pSteveRB = nullptr; //Rigid Body of the model

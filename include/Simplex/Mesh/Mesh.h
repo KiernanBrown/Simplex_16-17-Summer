@@ -527,6 +527,12 @@ public:
 	OUTPUT: ---
 	*/
 	uint GetUniqueIdentifier(void);
+	/*
+	USAGE: If this is a cloned group this will return the original one
+	ARGUMENTS: ---
+	OUTPUT: original group; nullptr if this is an original group
+	*/
+	Mesh* GetOriginal(void);
 #pragma endregion
 #pragma region Primitive Generation
 	/*

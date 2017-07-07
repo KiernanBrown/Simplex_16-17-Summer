@@ -25,9 +25,8 @@ class Application
 	MyMesh* m_pTube = nullptr;
 	MyMesh* m_pSphere = nullptr;
 	MyMesh* m_pTorus = nullptr;
-
-	String m_sProgrammer = "Alberto Bobadilla - labigm@rit.edu";
 private:
+	String m_sProgrammer = "Alberto Bobadilla - labigm@rit.edu";
 	static ImGuiObject gui; //GUI object
 	
 	uint m_uRenderCallCount = 0; //count of render calls per frame

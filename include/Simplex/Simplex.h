@@ -1,6 +1,7 @@
 /*----------------------------------------------
 Programmer: Alberto Bobadilla (labigm@gmail.com)
 Date: 2017/04
+Update: 2017/07
 ----------------------------------------------*/
 #ifndef __SIMPLEXFRAMEWORK_H_
 #define __SIMPLEXFRAMEWORK_H_
@@ -34,17 +35,21 @@ Date: 2017/04
 #include "Simplex\Mesh\Group.h"//Group class
 #include "Simplex\Mesh\Model.h"//Model Class
 
+#include "Simplex\Physics\RigidBody.h"//RigidBody Class
+
+#include "Simplex\Physics\Entity.h"//Entity Class
+#include "Simplex\Physics\EntityManager.h"//Entity Manager Singleton
+
 #include "Simplex\Camera\CameraManager.h" //Creates and manages the camera object for the world
 
+
+namespace Simplex
+{
 /*
- ReleaseAllSingletons
 USAGE: Releases all ReEngine Singletons
 ARGUMENTS: ---
 OUTPUT: ---
 */
-namespace Simplex
-{
-
 static void ReleaseAllSingletons(void)
 {
 	LightManager::ReleaseInstance();
@@ -57,6 +62,7 @@ static void ReleaseAllSingletons(void)
 	SystemSingleton::ReleaseInstance();
 	Text::ReleaseInstance();
 	MeshManager::ReleaseInstance();
+	EntityManager::ReleaseInstance();
 };
 
 } //namespace Simplex

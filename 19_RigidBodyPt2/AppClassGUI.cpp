@@ -44,6 +44,8 @@ void Application::DrawGUI(void)
 			ImGui::Text("    Up: Move Creeper\n");
 			ImGui::Text("  Down: Move Creeper\n");
 			ImGui::Text(" Shift: Modify Up/Down\n");
+			ImGui::Separator();
+			ImGui::TextColored(ImColor(255, 255, 0), "Only Axis Aligned Bounding Boxes are checked\n");
 		}
 		ImGui::End();
 	}
