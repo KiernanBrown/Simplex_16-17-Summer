@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicX", "BasicX\BasicX.vcxproj", "{E745E25C-0143-42AC-A486-1395A4C972AE}"
 EndProject
@@ -127,6 +127,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KiernanBrown_Deliverables", "KiernanBrown_Deliverables", "{FEDF0306-F36E-4928-9CA7-4C5F9E4D2E0D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KiernanBrown_E06", "KiernanBrown_E06\KiernanBrown_E06.vcxproj", "{A493C07E-BF67-4C0A-B712-E72A02BBE888}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KiernanBrown_A4", "KiernanBrown_A4\KiernanBrown_A4.vcxproj", "{FB972102-DCA2-4199-AB2B-CE5841B34164}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -292,6 +294,10 @@ Global
 		{A493C07E-BF67-4C0A-B712-E72A02BBE888}.Debug|x86.Build.0 = Debug|Win32
 		{A493C07E-BF67-4C0A-B712-E72A02BBE888}.Release|x86.ActiveCfg = Release|Win32
 		{A493C07E-BF67-4C0A-B712-E72A02BBE888}.Release|x86.Build.0 = Release|Win32
+		{FB972102-DCA2-4199-AB2B-CE5841B34164}.Debug|x86.ActiveCfg = Debug|Win32
+		{FB972102-DCA2-4199-AB2B-CE5841B34164}.Debug|x86.Build.0 = Debug|Win32
+		{FB972102-DCA2-4199-AB2B-CE5841B34164}.Release|x86.ActiveCfg = Release|Win32
+		{FB972102-DCA2-4199-AB2B-CE5841B34164}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -340,5 +346,6 @@ Global
 		{9557AEB2-A186-4645-B8D0-678D133C2EFA} = {13CD5CAF-2378-4851-9BEB-DF01D5A85C42}
 		{870B329D-6DED-48D2-8E86-0893E3BB8DAB} = {13CD5CAF-2378-4851-9BEB-DF01D5A85C42}
 		{A493C07E-BF67-4C0A-B712-E72A02BBE888} = {FEDF0306-F36E-4928-9CA7-4C5F9E4D2E0D}
+		{FB972102-DCA2-4199-AB2B-CE5841B34164} = {FEDF0306-F36E-4928-9CA7-4C5F9E4D2E0D}
 	EndGlobalSection
 EndGlobal

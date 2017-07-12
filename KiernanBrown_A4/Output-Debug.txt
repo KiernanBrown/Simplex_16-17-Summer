@@ -1,0 +1,114 @@
+﻿'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\Z_DELETE\KiernanBrown_A4_d.exe'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ntdll.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\kernel32.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KernelBase.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Program Files (x86)\Norton Security Suite\NortonData\22.5.2.15\Definitions\BASHDefs\20170705.001\UMEngx86.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\user32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\win32u.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\gdi32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\opengl32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\Simplex_d.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\glew32.dll'. Module was built without symbols.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\gdi32full.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcrt.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp_win.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\advapi32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ucrtbase.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\sechost.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\rpcrt4.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\imm32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\comdlg32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\sspicli.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\cryptbase.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\combase.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\sfml-system-d-2.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\sfml-window-d-2.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\bcryptprimitives.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\bcryptprimitives.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\bcryptprimitives.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\SHCore.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\shlwapi.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\sfml-graphics-d-2.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\FreeImage.dll'. Module was built without symbols.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\shell32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\libfbxsdk.dll'. Module was built without symbols.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ws2_32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\libfbxsdk.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\cfgmgr32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp140d.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\msvcp140d.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\windows.storage.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\vcruntime140d.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ucrtbased.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\winmm.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel.appcore.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\powrprof.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp140d.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\msvcp140d.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp140d.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\msvcp140d.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\profapi.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\glu32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.15063.413_none_55bc94a37c2a2854\comctl32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp140d.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\winmmbase.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\winmmbase.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\winmmbase.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\winmmbase.dll'
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\winmmbase.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\Documents\Simplex_16-17-Summer\_Binary\libfbxsdk.dll'. Module was built without symbols.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\uxtheme.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msctf.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\oleaut32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Users\Kiernan\AppData\Local\Temp\0KrakenDevProps.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ole32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\psapi.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\clbcatq.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\MMDevAPI.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\devobj.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\propsys.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\AudioSes.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\avrt.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\WinTypes.dll'. Symbols loaded.
+Error 10 (object not found) in function enum EResult __thiscall SysAudioHook::CMMDeviceClient::EraseAudioClientInVector(struct IAudioClient *)
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\System32\DriverStore\FileRepository\nvdmwu.inf_amd64_26aa6356770b2e86\nvinit.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\System32\DriverStore\FileRepository\nvdmwu.inf_amd64_26aa6356770b2e86\nvinit.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\System32\DriverStore\FileRepository\nvdmwu.inf_amd64_26aa6356770b2e86\nvinit.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\version.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ig7icd32.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\ig7icd32.dll'
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ig7icd32.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\igdusc32.dll'. Cannot find or open the PDB file.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\wtsapi32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\dwmapi.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\version.dll'
+'KiernanBrown_A4_d.exe' (Win32): Unloaded 'C:\Windows\System32\DriverStore\FileRepository\nvdmwu.inf_amd64_26aa6356770b2e86\nvinit.dll'
+The thread 0x568 has exited with code 0 (0x0).
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\dinput.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\hid.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\setupapi.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\wintrust.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msasn1.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\crypt32.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\TextInputFramework.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\CoreMessaging.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\CoreUIComponents.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ntmarta.dll'. Symbols loaded.
+'KiernanBrown_A4_d.exe' (Win32): Loaded 'C:\Windows\SysWOW64\usermgrcli.dll'. Symbols loaded.
+The thread 0x22c has exited with code 0 (0x0).
+The thread 0x45b8 has exited with code 0 (0x0).
+The thread 0x3e68 has exited with code 0 (0x0).
+The thread 0x35e0 has exited with code 0 (0x0).
+The thread 0x2704 has exited with code 0 (0x0).
+The thread 0x1d0 has exited with code 0 (0x0).
+The thread 0x498 has exited with code 0 (0x0).
+The thread 0x3314 has exited with code 0 (0x0).
+The thread 0x2a58 has exited with code 0 (0x0).
+The thread 0x3228 has exited with code 0 (0x0).
+The thread 0x3dd0 has exited with code 0 (0x0).
+The thread 0x3888 has exited with code 0 (0x0).
+The thread 0x4714 has exited with code 0 (0x0).
+The thread 0x3abc has exited with code 0 (0x0).
+The program '[14116] KiernanBrown_A4_d.exe' has exited with code 0 (0x0).
