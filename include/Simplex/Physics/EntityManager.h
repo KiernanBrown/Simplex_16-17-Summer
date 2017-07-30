@@ -13,9 +13,10 @@ namespace Simplex
 //System Class
 class SimplexDLL EntityManager
 {
+	typedef Entity* PEntity; //Entity Pointer
 	uint m_uEntityCount = 0; //number of elements in the list
+	PEntity* m_mEntityArray = nullptr; //array of Entity pointers
 	static EntityManager* m_pInstance; // Singleton pointer
-	std::vector<Entity*> m_entityList; //entities list
 public:
 	/*
 	Usage: Gets the singleton pointer
@@ -157,7 +158,159 @@ public:
 	OUTPUT: ---
 	*/
 	void AddEntityToRenderList(String a_sUniqueID, bool a_bRigidBody = false);
-	
+	/*
+	USAGE: Will set a dimension to the Entity
+	ARGUMENTS:
+	-	uint a_uIndex -> index (from the list) of the entity queried if < 0 will use the last one
+	-	uint a_uDimension -> dimension to set
+	OUTPUT: ---
+	*/
+	void AddDimension(uint a_uIndex, uint a_uDimension);
+	/*
+	USAGE: Will set a dimension to the Entity
+	ARGUMENTS:
+	-	String a_sUniqueID -> unique identifier of the entity queried
+	-	uint a_uDimension -> dimension to set
+	OUTPUT: ---
+	*/
+	void AddDimension(String a_sUniqueID, uint a_uDimension);
+	/*
+	USAGE: Will remove the entity from the specified dimension
+	ARGUMENTS:
+	-	uint a_uIndex -> index (from the list) of the entity queried if < 0 will use the last one
+	-	uint a_uDimension -> dimension to remove
+	OUTPUT: ---
+	*/
+	void RemoveDimension(uint a_uIndex, uint a_uDimension);
+	/*
+	USAGE: Will remove the entity from the specified dimension
+	ARGUMENTS:
+	-	String a_sUniqueID -> unique identifier of the entity queried
+	-	uint a_uDimension -> dimension to remove
+	OUTPUT: ---
+	*/
+	void RemoveDimension(String a_sUniqueID, uint a_uDimension);
+	/*
+	USAGE: will remove all dimensions from all entities
+	ARGUMENTS: ---
+	OUTPUT: ---
+	*/
+	void ClearDimensionSetAll(void);
+	/*
+	USAGE: will remove all dimensions from entity
+	ARGUMENTS: uint a_uIndex -> index (from the list) of the entity queried if < 0 will use the last one
+	OUTPUT: ---
+	*/
+	void ClearDimensionSet(uint a_uIndex);
+	/*
+	USAGE: will remove all dimensions from entity
+	ARGUMENTS: String a_sUniqueID -> unique identifier of the entity queried
+	OUTPUT: ---
+	*/
+	void ClearDimensionSet(String a_sUniqueID);
+	/*
+	USAGE: Will ask if the Entity is located in a particular dimension
+	ARGUMENTS:
+	-	uint a_uIndex -> index (from the list) of the entity queried if < 0 will use the last one
+	-	uint a_uDimension -> dimension queried
+	OUTPUT: result
+	*/
+	bool IsInDimension(uint a_uIndex, uint a_uDimension);
+	/*
+	USAGE: Will ask if the Entity is located in a particular dimension
+	ARGUMENTS:
+	-	String a_sUniqueID -> unique identifier of the entity queried
+	-	uint a_uDimension -> dimension queried
+	OUTPUT: result
+	*/
+	bool IsInDimension(String a_sUniqueID, uint a_uDimension);
+	/*
+	USAGE: Asks if this entity shares a dimension with the incoming one
+	ARGUMENTS:
+	-	uint a_uIndex -> index (from the list) of the entity queried if < 0 will use the last one
+	-	Entity* const a_pOther -> queried entity
+	OUTPUT: shares at least one dimension?
+	*/
+	bool SharesDimension(uint a_uIndex, Entity* const a_pOther);
+	/*
+	USAGE: Asks if this entity shares a dimension with the incoming one
+	ARGUMENTS:
+	-	String a_sUniqueID -> unique identifier of the entity queried
+	-	Entity* const a_pOther -> queried entity
+	OUTPUT: shares at least one dimension?
+	*/
+	bool SharesDimension(String a_sUniqueID, Entity* const a_pOther);
+	/*
+	USAGE: Will return the count of Entities in the system
+	ARGUMENTS: ---
+	OUTPUT: Entity count
+	*/
+	uint GetEntityCount(void);
+
+	/*
+	USAGE: applies a force to the specified object
+	ARGUMENTS:
+	-	vector3 a_v3Force -> force to apply
+	-	String a_sUniqueID -> ID of the Entity
+	OUTPUT: ---
+	*/
+	void ApplyForce(vector3 a_v3Force, String a_sUniqueID);
+	/*
+	USAGE: applies a force to the specified entity
+	ARGUMENTS:
+	-	vector3 a_v3Force -> force to apply
+	-	uint a_uIndex = -1 -> ID of the Entity if < 0 last object added
+	OUTPUT: ---
+	*/
+	void ApplyForce(vector3 a_v3Force, uint a_uIndex = -1);
+	/*
+	USAGE: Sets the position of the specified entity
+	ARGUMENTS:
+	-	vector3 a_v3Position -> position to set
+	-	String a_sUniqueID -> ID of the Entity
+	OUTPUT: ---
+	*/
+	void SetPosition(vector3 a_v3Position, String a_sUniqueID);
+	/*
+	USAGE: Sets the position of the specified entity
+	ARGUMENTS:
+	-	vector3 a_v3Position -> position to set
+	-	uint a_uIndex = -1 -> ID of the Entity if < 0 last object added
+	OUTPUT: ---
+	*/
+	void SetPosition(vector3 a_v3Position, uint a_uIndex = -1);
+	/*
+	USAGE: Sets the mass of the specified entity
+	ARGUMENTS:
+	-	float a_fMass -> mass to set
+	-	String a_sUniqueID -> ID of the Entity
+	OUTPUT: ---
+	*/
+	void SetMass(float a_fMass, String a_sUniqueID);
+	/*
+	USAGE: Sets the mass of the specified entity
+	ARGUMENTS:
+	-	float a_fMass -> mass to set
+	-	uint a_uIndex = -1 -> ID of the Entity if < 0 last object added
+	OUTPUT: ---
+	*/
+	void SetMass(float a_v3Position, uint a_uIndex = -1);
+	/*
+	USAGE: Sets the using physics solver flag for the specified object
+	ARGUMENTS:
+	-	bool a_bUse -> Using physics?
+	-	String a_sUniqueID -> ID of the Entity
+	OUTPUT: ---
+	*/
+	void UsePhysicsSolver(bool a_bUse, String a_sUniqueID);
+	/*
+	USAGE: Sets the using physics solver flag for the specified object
+	ARGUMENTS:
+	-	bool a_bUse -> Using physics?
+	-	uint a_uIndex = -1 -> ID of the Entity if < 0 last object added
+	OUTPUT: ---
+	*/
+	void UsePhysicsSolver(bool a_bUse = true, uint a_uIndex = -1);
 private:
 	/*
 	Usage: constructor
@@ -170,13 +323,13 @@ private:
 	Arguments: class object to copy
 	Output: class object instance
 	*/
-	EntityManager(EntityManager const& other);
+	EntityManager(EntityManager const& a_pOther);
 	/*
 	Usage: copy assignment operator
 	Arguments: class object to copy
 	Output: ---
 	*/
-	EntityManager& operator=(EntityManager const& other);
+	EntityManager& operator=(EntityManager const& a_pOther);
 	/*
 	Usage: destructor
 	Arguments: ---

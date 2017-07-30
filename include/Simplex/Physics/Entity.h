@@ -5,7 +5,7 @@ Date: 2017/07
 #ifndef __ENTITY_H_
 #define __ENTITY_H_
 
-#include "Simplex\Physics\RigidBody.h"
+#include "Simplex\Physics\Solver.h"
 
 namespace Simplex
 {
@@ -17,6 +17,9 @@ class SimplexDLL Entity
 	bool m_bSetAxis = false; //render axis flag
 	String m_sUniqueID = ""; //Unique identifier name
 
+	uint m_nDimensionCount = 0; //tells how many dimensions this entity lives in
+	uint* m_DimensionArray = nullptr; //Dimensions on which this entity is located
+
 	Model* m_pModel = nullptr; //Model associated with this Entity
 	RigidBody* m_pRigidBody = nullptr; //Rigid Body associated with this Entity
 
@@ -24,6 +27,10 @@ class SimplexDLL Entity
 	MeshManager* m_pMeshMngr = nullptr; //For rendering shapes
 
 	static std::map<String, Entity*> m_IDMap; //a map of the unique ID's
+
+	bool m_bUsePhysicsSolver = false; //Indicates if we will use a physics solver 
+
+	Solver* m_pSolver = nullptr; //Physics Solver
 
 public:
 	/*
@@ -124,6 +131,142 @@ public:
 	OUTPUT: ---
 	*/
 	void SetAxisVisible(bool a_bSetAxis = true);
+	/*
+	USAGE: Will set a dimension to the Entity
+	ARGUMENTS: uint a_uDimension -> dimension to set
+	OUTPUT: ---
+	*/
+	void AddDimension(uint a_uDimension);
+	/*
+	USAGE: Will remove the entity from the specified dimension
+	ARGUMENTS: uint a_uDimension -> dimension to remove
+	OUTPUT: ---
+	*/
+	void RemoveDimension(uint a_uDimension);
+	/*
+	USAGE: will remove all dimensions from entity
+	ARGUMENTS: ---
+	OUTPUT: ---
+	*/
+	void ClearDimensionSet(void);
+	/*
+	USAGE: Will ask if the Entity is located in a particular dimension
+	ARGUMENTS: uint a_uDimension -> dimension queried
+	OUTPUT: result
+	*/
+	bool IsInDimension(uint a_uDimension);
+	/*
+	USAGE: Asks if this entity shares a dimension with the incoming one
+	ARGUMENTS: Entity* const a_pOther -> queried entity
+	OUTPUT: shares at least one dimension?
+	*/
+	bool SharesDimension(Entity* const a_pOther);
+
+	/*
+	USAGE: Clears the collision list of this entity
+	ARGUMENTS: ---
+	OUTPUT: ---
+	*/
+	void ClearCollisionList(void);
+
+	/*
+	USAGE: Will sort the array of dimensions
+	ARGUMENTS: ---
+	OUTPUT: ---
+	*/
+	void SortDimensions(void);
+
+	/*
+	USAGE: Gets the array of rigid bodies pointer this one is colliding with
+	ARGUMENTS: ---
+	OUTPUT: list of colliding rigid bodies
+	*/
+	RigidBody::PRigidBody* GetColliderArray(void);
+	
+	/*
+	USAGE: Returns the number of objects colliding with this one
+	ARGUMENTS: ---
+	OUTPUT: colliding count
+	*/
+	uint GetCollidingCount(void);
+
+	/*
+	USAGE: Asks this Entity if this is the rigid body that belogs to it
+	ARGUMENTS: RigidBody* a_pRigidBody -> Queried Rigid Body
+	OUTPUT: is this your rigid body?
+	*/
+	bool HasThisRigidBody(RigidBody* a_pRigidBody);
+
+	/*
+	USAGE: Asks the entity to resolve the collision with the incoming one
+	ARGUMENTS: Entity* a_pOther -> Queried entity
+	OUTPUT: ---
+	*/
+	void ResolveCollision(Entity* a_pOther);
+
+	/*
+	USAGE: Gets the solver applied to this Entity
+	ARGUMENTS: ---
+	OUTPUT: Solver applied
+	*/
+	Solver* GetSolver(void);
+	/*
+	USAGE: Applies a force to the solver
+	ARGUMENTS: vector3 a_v3Force -> force to apply
+	OUTPUT: ---
+	*/
+	void ApplyForce(vector3 a_v3Force);
+	/*
+	USAGE: Sets the position of the solver
+	ARGUMENTS: vector3 a_v3Position -> position to set
+	OUTPUT: ---
+	*/
+	void SetPosition(vector3 a_v3Position);
+	/*
+	USAGE: Gets the position of the solver
+	ARGUMENTS: ---
+	OUTPUT: position of the solver
+	*/
+	vector3 GetPosition(void);
+
+	/*
+	USAGE: Sets the velocity of the solver
+	ARGUMENTS: vector3 a_v3Velocity -> velocity to set
+	OUTPUT: ---
+	*/
+	void SetVelocity(vector3 a_v3Velocity);
+	/*
+	USAGE: Gets the velocity of the solver
+	ARGUMENTS: ---
+	OUTPUT: velocity of the solver
+	*/
+	vector3 GetVelocity(void);
+
+	/*
+	USAGE: Sets the mass of the solver
+	ARGUMENTS: float a_fMass -> mass to set
+	OUTPUT: ---
+	*/
+	void SetMass(float a_fMass);
+	/*
+	USAGE: Gets mass of the solver
+	ARGUMENTS: ---
+	OUTPUT: mass of the object
+	*/
+	float GetMass(void);
+
+	/*
+	USAGE: Updates the Entity
+	ARGUMENTS: ---
+	OUTPUT: ---
+	*/
+	void Update(void);
+	/*
+	USAGE: Resolves using physics solver or not in the update
+	ARGUMENTS: bool a_bUse = true -> using physics solver?
+	OUTPUT: ---
+	*/
+	void UsePhysicsSolver(bool a_bUse = true);
 
 private:
 	/*

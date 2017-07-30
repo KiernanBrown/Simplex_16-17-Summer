@@ -24,6 +24,7 @@ Date: 2017/05
 #include <vector>
 #include <map>
 #include <set>
+#include <deque>
 
 // Include GLM
 #include <glm\glm.hpp>

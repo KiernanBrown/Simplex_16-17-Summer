@@ -42,6 +42,7 @@ Update: 2017/07
 
 #include "Simplex\Camera\CameraManager.h" //Creates and manages the camera object for the world
 
+#include "Simplex\Physics\Octant.h" //Octant for Octree
 
 namespace Simplex
 {
